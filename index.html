@@ -1206,10 +1206,20 @@
         }
     </style>
     <script>
-        function isNumberKey(evt) {
-            var charCode = (evt.which) ? evt.which : evt.keyCode
-            if (charCode > 31 && (charCode != 46 && (charCode < 48 || charCode > 57)))
-                return false;
+        function isNumberKey(txt, evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode == 46) {
+                //Check if the text already contains the . character
+                if (txt.value.indexOf('.') === -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                if (charCode > 31 &&
+                    (charCode < 48 || charCode > 57))
+                    return false;
+            }
             return true;
         }
     </script>
@@ -1221,167 +1231,196 @@
             <div class="row bg_3">
                 <h2><i>Credit Card Fraud Detection</i></h2>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V1</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V2</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V3</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V4</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V5</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V6</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V7</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V8</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V9</label>
                     <span class="focus-bg"></span>
                 </div>
 
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V10</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V11</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V12</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V13</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V14</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V15</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V16</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V17</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V18</label>
                     <span class="focus-bg"></span>
                 </div>
 
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V19</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V20</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V21</label>
                     <span class="focus-border"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V22</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V23</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V24</label>
                     <span class="focus-border">
             	<i></i>
             </span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V25</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V26</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V27</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>V28</label>
                     <span class="focus-bg"></span>
                 </div>
                 <div class="col-3 input-effect">
-                    <input class="effect-19" type="text" placeholder="" onkeypress="return isNumberKey(event)">
+                    <input class="effect-19" type="text"
+                           oninput="this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
                     <label>Amount</label>
                     <span class="focus-bg"></span>
                 </div>
@@ -1407,6 +1446,10 @@
     </div>
 </form>
 <script>
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
     const form = document.forms.namedItem("fileinfo");
 
     form.addEventListener(
@@ -1598,6 +1641,65 @@
             } else {
                 data29 = 0;
             }
+
+            if (!isNumeric(data1))
+                alert("V1 is not a valid number!. Please try again.");
+            if (!isNumeric(data2))
+                alert("V2 is not a valid number!. Please try again.");
+            if (!isNumeric(data3))
+                alert("V3 is not a valid number!. Please try again.");
+            if (!isNumeric(data4))
+                alert("V4 is not a valid number!. Please try again.");
+            if (!isNumeric(data5))
+                alert("V5 is not a valid number!. Please try again.");
+            if (!isNumeric(data6))
+                alert("V6 is not a valid number!. Please try again.");
+            if (!isNumeric(data7))
+                alert("V7 is not a valid number!. Please try again.");
+            if (!isNumeric(data8))
+                alert("V8 is not a valid number!. Please try again.");
+            if (!isNumeric(data9))
+                alert("V9 is not a valid number!. Please try again.");
+            if (!isNumeric(data10))
+                alert("V10 is not a valid number!. Please try again.");
+            if (!isNumeric(data11))
+                alert("V11 is not a valid number!. Please try again.");
+            if (!isNumeric(data12))
+                alert("V12 is not a valid number!. Please try again.");
+            if (!isNumeric(data13))
+                alert("V13 is not a valid number!. Please try again.");
+            if (!isNumeric(data14))
+                alert("V14 is not a valid number!. Please try again.");
+            if (!isNumeric(data15))
+                alert("V15 is not a valid number!. Please try again.");
+            if (!isNumeric(data16))
+                alert("V16 is not a valid number!. Please try again.");
+            if (!isNumeric(data17))
+                alert("V17 is not a valid number!. Please try again.");
+            if (!isNumeric(data18))
+                alert("V18 is not a valid number!. Please try again.");
+            if (!isNumeric(data19))
+                alert("V19 is not a valid number!. Please try again.");
+            if (!isNumeric(data20))
+                alert("V20 is not a valid number!. Please try again.");
+            if (!isNumeric(data21))
+                alert("V22 is not a valid number!. Please try again.");
+            if (!isNumeric(data22))
+                alert("V22 is not a valid number!. Please try again.");
+            if (!isNumeric(data23))
+                alert("V23 is not a valid number!. Please try again.");
+            if (!isNumeric(data24))
+                alert("V24 is not a valid number!. Please try again.");
+            if (!isNumeric(data25))
+                alert("V25 is not a valid number!. Please try again.");
+            if (!isNumeric(data26))
+                alert("V26 is not a valid number!. Please try again.");
+            if (!isNumeric(data27))
+                alert("V27 is not a valid number!. Please try again.");
+            if (!isNumeric(data28))
+                alert("V28 is not a valid number!. Please try again.");
+            if (!isNumeric(data29))
+                alert("Amount is not a valid number!. Please try again.");
 
 
             var data = "{\n" +
